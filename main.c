@@ -11,49 +11,70 @@
 
 #define NUM_PRODUTOS 10
 
-void imprimirArray(float arr[], int n);
-void bubbleSortBasico(float arr[], int n);
-void bubbleSortReverso(float arr[], int n);
+typedef struct {
+    char nome[20];
+    float preco;
+} Produto;
+
+void imprimirArray(Produto arr[], int n);
+void bubbleSortProduto(Produto arr[], int n);
+void bubbleSortProdutoReverso(Produto arr[], int n);
 
 int main(void) {
     // 1. Vetor com os preços de 10 produtos diferentes de um supermercado.
-    float precos[] = {5.50, 89.99, 97.50, 0.99, 24.99, 8.49, 12.50, 71.25, 2.49, 7.25};
+    // vetor de produtos 
+    Produto lista_produtos[NUM_PRODUTOS] = {
+        {"Arroz", 12.35},
+        {"Feijão Preto", 7.49},
+        {"Macarrão", 4.25},
+        {"Leite Integral", 6.99},
+        {"Café Torrado", 18.75},
+        {"Óleo de Soja", 5.80},
+        {"Farinha de Trigo", 9.40},
+        {"Margarina", 3.99},
+        {"Sabão em Pó", 21.55},
+        {"Detergente", 2.89},
+    };
 
     // 2. Exibindo os dados originais do vetor
     printf("Preços antes da ordenação:\n");
-    imprimirArray(precos, NUM_PRODUTOS);
-    printf("\n");
+    imprimirArray(lista_produtos, NUM_PRODUTOS);
+    printf("======================\n\n");
 
     // 3.1 Aplicando o algoritmo de ordenação Bubble Sort em ordem crescente (in place)
-    bubbleSortBasico(precos, NUM_PRODUTOS);
+    bubbleSortProduto(lista_produtos, NUM_PRODUTOS);
 
     // 4.1 Exibindo o vetor ordenado em ordem crescente
     printf("Preços do menor para o maior:\n");
-    imprimirArray(precos, NUM_PRODUTOS);
-    printf("\n");
+    imprimirArray(lista_produtos, NUM_PRODUTOS);
+    printf("======================\n\n");
     
     // 3.2 Aplicando o algoritmo de ordenação Bubble Sort em ordem decrescente (in place)
-    bubbleSortReverso(precos, NUM_PRODUTOS);
+    bubbleSortProdutoReverso(lista_produtos, NUM_PRODUTOS);
 
     // 4.2 Exibindo o vetor ordenado em ordem decrescente
     printf("Preços do maior para o menor:\n");
-    imprimirArray(precos, NUM_PRODUTOS);
+    imprimirArray(lista_produtos, NUM_PRODUTOS);
 
     return 0;
 }
 
-void imprimirArray(float arr[], int n) {
+void imprimirArray(Produto arr[], int n) {
     for (int i = 0; i < n; i++) {
-        printf("%.2f ", arr[i]);
+        if (i + 1 < 10) printf("0");
+        printf("%d.- ", i + 1);
+        printf("%s: ", arr[i].nome);
+        printf("%.2f ", arr[i].preco);
+        printf("\n");
     }
     printf("\n");
 }
 
-void bubbleSortBasico(float arr[], int n) {
+void bubbleSortProduto(Produto arr[], int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                float temp = arr[j];
+            if (arr[j].preco > arr[j + 1].preco) {
+                Produto temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
@@ -61,11 +82,11 @@ void bubbleSortBasico(float arr[], int n) {
     }
 }
 
-void bubbleSortReverso(float arr[], int n) {
+void bubbleSortProdutoReverso(Produto arr[], int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] < arr[j + 1]) {
-                float temp = arr[j];
+            if (arr[j].preco < arr[j + 1].preco) {
+                Produto temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
