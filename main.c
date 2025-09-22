@@ -14,6 +14,7 @@ void bubbleSortProduto(Produto arr[], int n);
 void bubbleSortProdutoReverso(Produto arr[], int n);
 void lerPrecos(Produto arr[], int n);
 void printLine(void);
+void apresentar_programa(void);
 
 int main(void) {
     SetConsoleOutputCP(CP_UTF8); 
@@ -33,6 +34,9 @@ int main(void) {
         {"Sabão em Pó", 0},
         {"Detergente", 0},
     };
+
+    // Apresentar programa
+    apresentar_programa();
 
     // Pedir para o cliente colocar os preços dos produtos
     lerPrecos(lista_produtos, NUM_PRODUTOS);
@@ -58,6 +62,7 @@ int main(void) {
     printf("📉 Preços do maior para o menor:\n\n");
     imprimirArray(lista_produtos, NUM_PRODUTOS);
 
+    printf("\nObrigado por usar o melhor programa para ordenar produtos por preços em supermercados! Até a próxima!");
     return 0;
 }
 
@@ -123,3 +128,16 @@ void lerPrecos(Produto arr[], int n) {
 
     
 void printLine(void) {printf("\n==========================\n");} 
+
+void apresentar_programa(void) {
+    printf("   ___   ____    ____   ____  ____   ____  _____   ____  ___     ___   ____       ___      ___      ____  ____     ___    __   ___   _____    \n");
+    printf("  /   \\ |    \\  /    | /    ||    \\ |    ||     | /    ||   \\   /   \\ |    \\     |   \\    /  _]    |    \\|    \\   /  _]  /  ] /   \\ / ___/    \n");
+    printf(" |     ||  D  )|   __||  o  ||  _  | |  | |__/  ||  o  ||    \\ |     ||  D  )    |    \\  /  [_     |  o  )  D  ) /  [_  /  / |     (   \\_     \n");
+    printf(" |  O  ||    / |  |  ||     ||  |  | |  | |   __||     ||  D  ||  O  ||    /     |  D  ||    _]    |   _/|    / |    _]/  /  |  O  |\\__  |    \n");
+    printf(" |     ||    \\ |  |_ ||  _  ||  |  | |  | |  /  ||  _  ||     ||     ||    \\     |     ||   [_     |  |  |    \\ |   [_/   \\_ |     |/  \\ |    \n");
+    printf(" |     ||  .  \\|     ||  |  ||  |  | |  | |     ||  |  ||     ||     ||  .  \\    |     ||     |    |  |  |  .  \\|     \\     ||     |\\    |    \n");
+    printf("  \\___/ |__|\\_||___,_||__|__||__|__||____||_____||__|__||_____| \\___/ |__|\\_|    |_____||_____|    |__|  |__|\\_||_____|\\__  | \\___/  \\___|    \n");
+    printf("                                                                                                                          \\|            ");
+    printf("\n");
+    printf("O melhor programa para ordenar produtos por preços em supermercados! 🛒\n\n");
+}
