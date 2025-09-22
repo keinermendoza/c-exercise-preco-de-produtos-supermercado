@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <windows.h>
 
 /* Seu programa deverá ser desenvolvido em linguagem C, respeitando os seguintes requisitos:
     1. Ler ou definir um vetor com 10 valores, relacionados a um tema escolhido por você (ex.: temperaturas, vendas, notas, idades, etc.);
@@ -21,6 +22,9 @@ void bubbleSortProduto(Produto arr[], int n);
 void bubbleSortProdutoReverso(Produto arr[], int n);
 
 int main(void) {
+    SetConsoleOutputCP(CP_UTF8); // Comente esta linha se seu sistema operacional não for Windows
+    SetConsoleCP(CP_UTF8); // Comente esta linha se seu sistema operacional não for Windows
+
     // 1. Vetor com os preços de 10 produtos diferentes de um supermercado.
     // vetor de produtos 
     Produto lista_produtos[NUM_PRODUTOS] = {
