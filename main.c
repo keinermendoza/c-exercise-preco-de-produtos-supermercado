@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
 
 #define NUM_PRODUTOS 10
 
@@ -17,9 +16,6 @@ void printLine(void);
 void apresentar_programa(void);
 
 int main(void) {
-    SetConsoleOutputCP(CP_UTF8); 
-    SetConsoleCP(CP_UTF8);
-
     // Vetor com os preços de 10 produtos diferentes de um supermercado.
     // vetor de produtos 
     Produto lista_produtos[NUM_PRODUTOS] = {
