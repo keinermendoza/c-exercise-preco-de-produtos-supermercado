@@ -16,7 +16,6 @@ void printLine(void);
 void apresentar_programa(void);
 
 int main(void) {
-    // Vetor com os preços de 10 produtos diferentes de um supermercado.
     // vetor de produtos 
     Produto lista_produtos[NUM_PRODUTOS] = {
         {"Arroz", 0},
@@ -58,7 +57,7 @@ int main(void) {
     printf("📉 Preços do maior para o menor:\n\n");
     imprimirArray(lista_produtos, NUM_PRODUTOS);
 
-    printf("\nObrigado por usar o melhor programa para ordenar produtos por preços em supermercados! Até a próxima!");
+    printf("\nObrigado por usar o melhor programa para ordenar produtos por preços em supermercados! Até a próxima!\n");
     return 0;
 }
 
@@ -73,26 +72,39 @@ void imprimirArray(Produto arr[], int n) {
 }
 
 void bubbleSortProduto(Produto arr[], int n) {
+    int ordenada = 0; // switch para terminar se a array já esta ordenada
+
     for (int i = 0; i < n; i++) {
+        ordenada = 1;
         for (int j = 0; j < n - i - 1; j++) {
             if (arr[j].preco > arr[j + 1].preco) {
+                ordenada = 0; // achou um elemento não ordenado
+
                 Produto temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
+            if(ordenada) break;
         }
     }
 }
 
 void bubbleSortProdutoReverso(Produto arr[], int n) {
+    int ordenada = 0; // switch para terminar se a array já esta ordenada
+
     for (int i = 0; i < n; i++) {
+        ordenada = 1;
         for (int j = 0; j < n - i - 1; j++) {
             if (arr[j].preco < arr[j + 1].preco) {
+                ordenada = 0; // achou um elemento não ordenado
+
                 Produto temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
         }
+        if(ordenada) break;
+
     }
 }
 
