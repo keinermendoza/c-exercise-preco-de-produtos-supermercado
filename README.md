@@ -1,14 +1,14 @@
 
 # Ordenação de Preços de Supermercado (C)
 
-Este programa de terminal, desenvolvido em **C**, permite ao usuário inserir os preços de produtos para um supermercado (TODO).  
+Este programa de terminal, desenvolvido em **C**, permite ao usuário inserir os preços de produtos para um supermercado.  
 
 Ao finalizar a execução, o programa apresenta os preços dos produtos ordenados de forma ascendente e descendente.
 
 ---
 
 ## 📋 Funcionalidades
-- Aceita os preços fornecidos pelo usuário (TODO)  
+- Aceita os preços fornecidos pelo usuário 
 - Ordena os preços de forma ascendente e os exibe no terminal  
 - Ordena os preços de forma descendente e os exibe no terminal
 
